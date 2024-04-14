@@ -1,2 +1,2 @@
 # TextCNN
-Implement of TextCNN by PyTorch, and a implement of THUNews classification task.
+Implement of TextCNN by PyTorch, and an implement of THUNews classification task.
