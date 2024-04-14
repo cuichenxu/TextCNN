@@ -5,7 +5,6 @@ def train(train_dataloader, dev_dataloader, model, loss_fn, optimizer, epoches, 
         loss_list = []
         for idx, (input, label) in enumerate(train_dataloader):
             input = input.to(device)
-            # print(input.size())
             pred_label = model(input)
             label = [int(item) for item in label]
             label = torch.tensor(label).to(device)
@@ -31,5 +30,5 @@ def train(train_dataloader, dev_dataloader, model, loss_fn, optimizer, epoches, 
                 _, predicted = torch.max(pred_label.data, 1)
                 correct += (predicted == label).sum().item()
             print(f"Epoch:{epoch+1}/{epoches}\tdev数据:{total}, 预测正确数据:{correct}, 准确率为:{correct/(total)}")
-        # save model
+        # 保存模型
         torch.save(model.state_dict(), f"path of model save path/dataloader_model_{epoch+1}.pth")   

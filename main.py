@@ -7,12 +7,12 @@ from model import TextCNN
 vocab_path = "path of vacab.txt"
 class_path = "path of class.txt"
 
-# save_vocab(vocab_path)
-
+# 获取train, dev, test数据集
 dataset = TextDataSet("train", vocab_path)
 dev_dataset = TextDataSet("dev", vocab_path)
 test_dataset = TextDataSet("test", vocab_path)
 
+# 使用DataLoader加载数据
 dataloader = torch.utils.data.DataLoader(dataset, batch_size=4, shuffle=True)
 dev_dataloader = torch.utils.data.DataLoader(dev_dataset, batch_size=4, shuffle=False)
 test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=4, shuffle=False)
@@ -25,10 +25,12 @@ vocab_size = len(words)
 class_num = len(classes)
 embedding_dim = 128
 
+# 定义模型，损失函数，优化器
 model = TextCNN(vocab_size, embedding_dim, class_num, batch_size=4)
 model = model.to(device)
 loss_fn = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.00005)
 epoches = 10
 
+# 训练模型
 train(dataloader, dev_dataloader, model, loss_fn, optimizer, epoches, device)

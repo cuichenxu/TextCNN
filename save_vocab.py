@@ -5,6 +5,7 @@ FILE_PATHS = {
     "test": "path of test.txt",
 }
 
+# 读取类别
 def get_class(file_path=FILE_PATHS["class"]):
     with open(file_path, 'r') as file:
         classes = file.read()
@@ -14,6 +15,7 @@ def get_class(file_path=FILE_PATHS["class"]):
         class_to_idx[cla] = i
     return classes, class_to_idx
 
+# 读取数据，返回x和y
 def get_x_and_y(file_type, file_paths = FILE_PATHS):
     with open(file_paths[file_type], 'r') as file:
         datas = file.read()
@@ -26,6 +28,7 @@ def get_x_and_y(file_type, file_paths = FILE_PATHS):
         y.append(data[1])
     return x, y
 
+# 读取所有的数据，统计词频，保存词表
 from collections import Counter
 def save_vocab(vocab_path):
     contents = []
