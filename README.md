@@ -1,7 +1,7 @@
 # TextCNN
 使用TextCNN完成中文新闻分类，数据集为THUCNews
 
-数据集：THUCNews，数据集来源：[数据集下载](https://github.com/649453932/Chinese-Text-Classification-Pytorch/tree/master/THUCNews/data)
+数据集：使用别人已经处理好的THUCNews数据集，数据集源：[数据集下载](https://github.com/649453932/Chinese-Text-Classification-Pytorch/tree/master/THUCNews/data)
 
 本仓库代码实现：数据处理，构造模型，训练模型，**保存模型后根据输入进行推理**
 
