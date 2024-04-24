@@ -4,6 +4,7 @@
 数据集：THUCNews，数据集来源：[数据集下载](https://github.com/649453932/Chinese-Text-Classification-Pytorch/tree/master/THUCNews/data)
 
 本仓库代码实现：数据处理，构造模型，训练模型，**保存模型后根据输入进行推理**
+
 代码下载到本地可直接使用，或按照自己数据集格式修改embedding, model_dim等参数。
 
 # 使用
